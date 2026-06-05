@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pack de Livros para Colorir Religiosos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Nunito', sans-serif; background:#fff; color:#222; }
+
+/* ===================== SEÇÃO 1: HERO ===================== */
+.s1 {
+  background: #FAF3EA;
+  padding: 60px 40px 50px;
+}
+.s1-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.s1 h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  text-align: center;
+  color: #111;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.s1 .sub {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+.s1-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+.s1-img {
+  flex: 0 0 420px;
+  max-width: 420px;
+}
+.s1-img .img-placeholder {
+  width: 100%;
+  min-height: 320px;
+  background: #e8ddd0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #7a6a5a;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  border: 2px dashed #c0a882;
+}
+.s1-img .img-placeholder .ph-icon { font-size: 48px; margin-bottom: 10px; }
+.s1-img .img-placeholder .ph-label { font-size: 13px; color: #a08060; }
+
+.s1-benefits { flex: 1; }
+.s1-benefits h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: #111;
+}
+.benefit-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.benefit-check {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.benefit-row p {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* ===================== SEÇÃO 2: PREÇO + BOTÃO ===================== */
+.s2 {
+  background: #FAF3EA;
+  padding: 0 40px 60px;
+}
+.s2-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.s2-price-col { padding-top: 10px; }
+.s2-price-col .more-benefits { margin-bottom: 20px; }
+.s2-price-col .more-benefits .benefit-row { margin-bottom: 16px; }
+.price-old {
+  font-size: 22px;
+  font-weight: 800;
+  color: #222;
+}
+.price-old span { color: #e53935; text-decoration: line-through; }
+.price-new {
+  font-size: 52px;
+  font-weight: 900;
+  color: #2E7D32;
+  margin: 4px 0 20px;
+  line-height: 1.1;
+}
+.price-new span { color: #2E7D32; }
+.btn-eu-quero {
+  display: inline-block;
+  background: #2E7D32;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 16px 48px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.btn-eu-quero:hover { background: #1b5e20; }
+
+/* ===================== SEÇÃO 3: TAGLINE ===================== */
+.s3-tagline {
+  background: #F06292;
+  padding: 44px 20px;
+  text-align: center;
+}
+.s3-tagline p {
+  font-family: 'Brush Script MT', 'Dancing Script', cursive;
+  font-size: 48px;
+  color: #fff;
+  font-style: italic;
+}
+
+/* ===================== SEÇÃO 4: EXEMPLOS DE ATIVIDADES ===================== */
+.s4 {
+  background: #fff;
+  padding: 60px 40px;
+  text-align: center;
+}
+.s4 h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 10px;
+}
+.s4 .sub {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 40px;
+}
+.s4 .sub b { color: #111; }
+
+/* Slider */
+.slider-wrap {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.slider-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #555;
+  z-index: 2;
+}
+.slider-btn.right { color: #1565C0; border-color: #1565C0; }
+
+/* viewport que esconde o overflow */
+.slides-viewport {
+  overflow: hidden;
+  flex: 1;
+}
+/* container que se move */
+.slides-container {
+  display: flex;
+  gap: 0;
+  transition: transform 0.4s ease;
+}
+.activity-card {
+  flex: 0 0 100%;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #fff;
+}
+
+/* ===================== SEÇÃO 5: CONTEÚDO ===================== */
+.s5 {
+  background: #FFFDE7;
+  padding: 60px 40px;
+  text-align: center;
+}
+.s5 h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 60px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 40px;
+}
+.modules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+.module-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.module-cover {
+  width: 90px;
+  min-width: 90px;
+  height: 115px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.module-cover img { width:100%; height:100%; object-fit:cover; border-radius:8px; }
+.module-info { flex: 1; }
+.module-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.module-icon { font-size: 22px; }
+.module-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  font-weight: 400;
+  color: #111;
+}
+.module-title.red { color: #e53935; }
+.module-desc {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+}
+.modules-grid .module-solo {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 400px;
+}
+
+/* ===================== SEÇÃO 6: COMO FUNCIONA ===================== */
+.s6 {
+  background: #FFFDE7;
+  padding: 60px 40px;
+  text-align: center;
+}
+.s6 h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 40px;
+}
+.steps-col {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.step-card {
+  border: 2px dashed #90CAF9;
+  border-radius: 16px;
+  padding: 24px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  background: #fff;
+}
+.step-card .step-icon { font-size: 42px; flex-shrink: 0; }
+.step-card h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 6px;
+}
+.step-card p { font-size: 15px; color: #444; line-height: 1.5; }
+
+/* ===================== SEÇÃO 7: OFERTA EXCLUSIVA ===================== */
+.s7 {
+  background: #F06292;
+  padding: 60px 20px;
+  text-align: center;
+}
+.s7 h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 56px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.offer-box {
+  background: #FAF3EA;
+  border: 2px dashed #999;
+  border-radius: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 36px 32px 40px;
+}
+
+.offer-promo-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.offer-price {
+  font-family: 'Fredoka One', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 20px;
+}
+.offer-checklist {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 24px;
+}
+.offer-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0d4c0;
+}
+.offer-checklist li:last-child { border-bottom: none; }
+.offer-checklist .ck { color: #2E7D32; font-size: 18px; }
+.btn-comprar {
+  display: block;
+  width: 100%;
+  background: #2E7D32;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 18px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.btn-comprar:hover { background: #1b5e20; }
+
+/* ===================== SEÇÃO 8: GARANTIA ===================== */
+.s8 {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.medal-circle {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at 40% 35%, #f5e07a, #c8960a);
+  border-radius: 50%;
+  border: 6px solid #a87800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(168,120,0,0.3);
+}
+.medal-top { font-size: 11px; font-weight: 900; color: #7a5800; letter-spacing: 2px; text-transform: uppercase; }
+.medal-num { font-size: 54px; font-weight: 900; color: #5a3e00; line-height: 1; }
+.medal-dias { font-size: 14px; font-weight: 700; color: #7a5800; }
+.medal-bottom { font-size: 9px; font-weight: 900; color: #7a5800; letter-spacing: 1px; text-transform: uppercase; }
+.s8 h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.s8 .garantia-company {
+  font-size: 16px;
+  color: #444;
+  max-width: 560px;
+  margin: 0 auto 16px;
+  line-height: 1.7;
+}
+.s8 .garantia-company b { color: #111; }
+.s8 .garantia-text {
+  font-size: 16px;
+  color: #444;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.s8 .garantia-text b { color: #111; }
+
+/* ===================== SEÇÃO 9: FOOTER ===================== */
+.s9-direitos {
+  background: #f5f5f5;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+.s9-direitos h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 16px;
+}
+.s9-direitos p {
+  font-size: 14px;
+  color: #555;
+  max-width: 640px;
+  margin: 0 auto 8px;
+  line-height: 1.7;
+}
+.s9-direitos p b { color: #222; }
+.s9-pagamento {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+.s9-pagamento h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 20px;
+}
+.payment-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.pay-badge {
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.pay-visa { background: #1a1f71; }
+.pay-master { background: #eb001b; }
+.pay-elo { background: #333; }
+.pay-pix { background: #32b4a8; }
+.pay-amex { background: #2e77bc; }
+.pay-hipercard { background: #b22222; }
+.pay-boleto { background: #555; }
+.pay-diners { background: #004a97; }
+.secure-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.secure-badge {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .s1 h1 { font-size: 32px; }
+  .s1-body { flex-direction: column; }
+  .s1-img { flex: none; max-width: 100%; }
+  .modules-grid { grid-template-columns: 1fr; }
+  .modules-grid .module-solo { max-width: 100%; }
+  .s5 h2 { font-size: 40px; }
+  .s7 h2 { font-size: 38px; }
+  .s3-tagline p { font-size: 32px; }
+}
+
+/* ===================== MODAL PIX ===================== */
+.pix-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.pix-overlay.active { display: flex; }
+.pix-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  position: relative;
+}
+.pix-close {
+  position: absolute;
+  top: 14px; right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #888;
+  background: none;
+  border: none;
+  font-weight: 900;
+}
+.pix-logo {
+  width: 56px; height: 56px;
+  background: #32b4a8;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 28px;
+}
+.pix-modal h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 26px;
+  color: #111;
+  margin-bottom: 4px;
+}
+.pix-modal .pix-valor {
+  font-size: 36px;
+  font-weight: 900;
+  color: #2E7D32;
+  margin-bottom: 16px;
+}
+/* Etapas */
+.pix-step { display: none; }
+.pix-step.active { display: block; }
+
+/* QR Code area */
+.qr-box {
+  background: #f8f8f8;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.qr-box img { width: 180px; height: 180px; }
+.pix-copy-key {
+  background: #f0faf0;
+  border: 1.5px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2E7D32;
+  word-break: break-all;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+.btn-copy {
+  background: #32b4a8;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 6px;
+}
+.btn-copy:hover { background: #279e93; }
+.pix-timer {
+  font-size: 13px;
+  color: #888;
+  margin-top: 8px;
+}
+.pix-timer b { color: #e53935; }
+/* Verificando */
+.checking-spinner {
+  width: 56px; height: 56px;
+  border: 5px solid #e0e0e0;
+  border-top-color: #32b4a8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* Sucesso */
+.success-icon {
+  font-size: 64px;
+  margin: 10px 0;
+}
+.btn-whats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 14px;
+  text-decoration: none;
+}
+.btn-whats:hover { background: #1ebe5a; }
+</style>
+</head>
+<body>
+
+<!-- SEÇÃO 1: HERO + BENEFÍCIOS -->
+<section class="s1">
+  <div class="s1-inner">
+    <h1>Coleção Completa de<br>Livros para Colorir<br>Religiosos 🙏</h1>
+    <p class="sub">São +300 páginas com tudo que o seu pequeno(a)<br>precisa para colorir, aprender sobre a Bíblia e crescer na fé!</p>
+
+    <div class="s1-body">
+      <div class="s1-img">
+        <img src="img_1_js-removebg-preview.png" style="width:100%;border-radius:12px;">
+      </div>
+
+      <div class="s1-benefits">
+        <h2>Benefícios</h2>
+        <div class="benefit-row">
+          <span class="benefit-check">✓</span>
+          <p>Aproxima a criança da fé de forma lúdica e divertida</p>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-check">✓</span>
+          <p>Aumento da concentração e foco</p>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-check">✓</span>
+          <p>Acelera o desenvolvimento da<br>coordenação motora</p>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-check">✓</span>
+          <p>Ensina histórias bíblicas enquanto colore</p>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-check">✓</span>
+          <p>Fortalece os valores cristãos desde pequeno(a)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 2: PREÇO + BOTÃO -->
+<div class="s2">
+  <div class="s2-inner">
+    <div class="s2-price-col">
+      <p class="price-old">De<span> R$ 47,90</span></p>
+      <p class="price-new">Por<span> R$ 15,00</span></p>
+      <button class="btn-eu-quero" onclick="abrirPix()">EU QUERO</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO 3: TAGLINE ROSA -->
+<div class="s3-tagline">
+  <p>Colorindo a fé com amor ✝️</p>
+</div>
+
+<!-- SEÇÃO 4: EXEMPLOS DE ATIVIDADES -->
+<section class="s4">
+  <h2>Exemplos de<br>Atividades</h2>
+  <p class="sub">São <b>5 livros</b> com mais de <b>300 páginas</b><br>para colorir, aprender e celebrar a fé</p>
+
+  <div class="slider-wrap">
+    <button class="slider-btn left" onclick="slide(-1)">&#8249;</button>
+
+    <div class="slides-viewport">
+      <div class="slides-container" id="slidesContainer">
+
+        <!-- CARD 1 -->
+        <div class="activity-card">
+          <img src="10.png" style="width:100%;height:auto;display:block;">
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="activity-card">
+          <img src="12.png" style="width:100%;height:auto;display:block;">
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="activity-card">
+          <img src="17.png" style="width:100%;height:auto;display:block;">
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="activity-card">
+          <img src="20.png" style="width:100%;height:auto;display:block;">
+        </div>
+
+      </div><!-- /slides-container -->
+    </div><!-- /slides-viewport -->
+
+    <button class="slider-btn right" onclick="slide(1)">&#8250;</button>
+  </div>
+</section>
+
+<!-- SEÇÃO 5: CONTEÚDO -->
+<section class="s5">
+  <h2>Conteúdo</h2>
+  <div class="modules-grid">
+
+    <div class="module-row">
+      <div class="module-cover"><img src="1.png"></div>
+      <div class="module-info">
+        <div class="module-title-row">
+          <span class="module-icon">📖</span>
+          <span class="module-title">Histórias do Antigo Testamento</span>
+        </div>
+        <p class="module-desc">Noé, Moisés, Davi e Golias — histórias clássicas para colorir e aprender.</p>
+      </div>
+    </div>
+
+    <div class="module-row">
+      <div class="module-cover"><img src="2.png"></div>
+      <div class="module-info">
+        <div class="module-title-row">
+          <span class="module-icon">✝️</span>
+          <span class="module-title red">A Vida de Jesus</span>
+        </div>
+        <p class="module-desc">Do nascimento em Belém à ressurreição — páginas lindas para pintar com fé.</p>
+      </div>
+    </div>
+
+    <div class="module-row">
+      <div class="module-cover"><img src="3.png"></div>
+      <div class="module-info">
+        <div class="module-title-row">
+          <span class="module-icon">🕊️</span>
+          <span class="module-title">Santos e Anjos</span>
+        </div>
+        <p class="module-desc">Anjos guardiões e santos padroeiros em ilustrações carinhosas para colorir.</p>
+      </div>
+    </div>
+
+    <div class="module-row">
+      <div class="module-cover"><img src="4.png"></div>
+      <div class="module-info">
+        <div class="module-title-row">
+          <span class="module-icon">⭐</span>
+          <span class="module-title">Natal e Páscoa</span>
+        </div>
+        <p class="module-desc">Celebre as datas mais sagradas do ano com arte, cores e muita fé!</p>
+      </div>
+    </div>
+
+    <div class="module-solo">
+      <div class="module-row">
+        <div class="module-cover"><img src="5.png"></div>
+        <div class="module-info">
+          <div class="module-title-row">
+            <span class="module-icon">🎨</span>
+            <span class="module-title">Versículos Bíblicos</span>
+          </div>
+          <p class="module-desc">Páginas ilustradas com versículos para pintar, memorizar e amar a palavra de Deus.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 6: COMO FUNCIONA -->
+<section class="s6">
+  <h2>Como Funciona?</h2>
+  <div class="steps-col">
+
+    <div class="step-card">
+      <div class="step-icon">
+        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#25D366"/>
+          <path d="M34.6 13.4C32 10.8 28.6 9.3 25 9.3c-7.5 0-13.6 6.1-13.6 13.6 0 2.4.6 4.7 1.8 6.8L11 38l8.5-2.2c2 1.1 4.2 1.6 6.5 1.6 7.5 0 13.6-6.1 13.6-13.6 0-3.6-1.4-7-4-9.4zM25 35c-2 0-4-.5-5.8-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4C14.3 28 13.7 25.7 13.7 23.3c0-6.2 5-11.2 11.3-11.2 3 0 5.8 1.2 8 3.3 2.1 2.1 3.3 4.9 3.3 7.9-.1 6.2-5.1 11.2-11.3 11.2zm6.2-8.4c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.3-.2.2-.3.3-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.2-.2.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.8-1-2.4-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.8.6.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Chega no WhatsApp</h3>
+        <p>após efetuar o pagamento você receberá o acesso via WhatsApp a todo material para poder baixá-lo.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-icon">🖨️</div>
+      <div>
+        <h3>Baixe as atividades</h3>
+        <p>Baixe para seu PC ou celular, você pode imprimir quantas vezes desejar.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-icon">✍️</div>
+      <div>
+        <h3>Realizar as atividades</h3>
+        <p>Mão na massa, é hora de realiza-las com o seu pequeno (a)! Boa diversão, realize as atividades no seu tempo.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 7: OFERTA EXCLUSIVA -->
+<section class="s7" id="oferta">
+  <h2>Oferta Exclusiva</h2>
+
+  <div class="offer-box">
+    <img src="pack.png" style="width:100%;border-radius:10px;margin-bottom:24px;">
+
+    <p class="offer-promo-title">Super Promoção</p>
+    <p class="offer-price">R$ 15,00</p>
+
+    <ul class="offer-checklist">
+      <li><span class="ck">✓</span> Pagamento Único</li>
+      <li><span class="ck">✓</span> Mais de 300 Atividades em PDF</li>
+      <li><span class="ck">✓</span> Suporte no WhatsApp</li>
+      <li><span class="ck">✓</span> Atualizações Mensais</li>
+      <li><span class="ck">✓</span> Acesso Vitalício</li>
+    </ul>
+
+    <button class="btn-comprar" onclick="abrirPix()">COMPRAR AGORA</button>
+  </div>
+</section>
+
+<!-- SEÇÃO 8: GARANTIA -->
+<section class="s8">
+  <div style="width:160px;margin:0 auto 24px;text-align:center;">
+    <div class="medal-circle">
+      <span class="medal-top">COMPRA GARANTIDA</span>
+      <span class="medal-num">7</span>
+      <span class="medal-dias">Dias</span>
+      <span class="medal-bottom">100% SEGURO</span>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:-2px;">
+      <div style="width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:30px solid #c8960a;"></div>
+      <div style="width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:30px solid #a87800;"></div>
+    </div>
+  </div>
+
+  <h2>Satisfação garantida<br>ou seu dinheiro de volta!</h2>
+
+  <p class="garantia-company">
+    Este material foi desenvolvido por <b>KPX SERVIÇOS DIGITAIS, CNPJ 35.867.917/0001-72</b>, proprietária da marca <b>EBOOKOTECA®</b>, registrada sob o número 937451983.
+  </p>
+
+  <p class="garantia-text">
+    Aqui, sua satisfação vem em primeiro lugar! Por isso, oferecemos <b>garantia de 7 dias</b>: se o produto não atender às suas expectativas, você pode solicitar o reembolso total dentro desse prazo. Simples assim!
+  </p>
+</section>
+
+<!-- SEÇÃO 9: DIREITOS AUTORAIS + PAGAMENTO -->
+<div class="s9-direitos">
+  <h3>Direitos Autorais</h3>
+  <p><b>© KPX Serviços Digitais – Todos os direitos reservados.</b></p>
+  <p>Este material foi criado com dedicação para incentivar o aprendizado de forma lúdica e eficiente. A reprodução, distribuição ou comercialização sem autorização é proibida. Valorize o trabalho de quem educa! 💛</p>
+</div>
+
+<div class="s9-pagamento">
+  <h3>Formas de Pagamento</h3>
+  <div class="payment-row">
+    <span class="pay-badge pay-visa">VISA</span>
+    <span class="pay-badge pay-master">MASTERCARD</span>
+    <span class="pay-badge pay-elo">ELO</span>
+    <span class="pay-badge pay-pix">PIX</span>
+  </div>
+  <div class="payment-row">
+    <span class="pay-badge pay-amex">AMEX</span>
+    <span class="pay-badge pay-hipercard">HIPERCARD</span>
+    <span class="pay-badge pay-boleto">BOLETO</span>
+    <span class="pay-badge pay-diners">DINERS CLUB</span>
+  </div>
+  <div class="secure-row">
+    <div class="secure-badge">🔒 SSL 100% SEGURA</div>
+    <div class="secure-badge">✅ 100% COMPRA GARANTIDA</div>
+    <div class="secure-badge">🛡️ PROTEGIDO SITE SEGURO</div>
+  </div>
+</div>
+
+<script>
+let currentSlide = 0;
+function slide(dir) {
+  const container = document.getElementById('slidesContainer');
+  const total = container.querySelectorAll('.activity-card').length;
+  currentSlide = (currentSlide + dir + total) % total;
+  container.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+</script>
+
+<!-- ===================== MODAL PIX ===================== -->
+
+<!-- ETAPA 0: Formulário de dados do comprador -->
+<div class="pix-overlay" id="pixOverlay">
+  <div class="pix-modal">
+    <button class="pix-close" onclick="fecharPix()">✕</button>
+
+    <!-- ETAPA 0: Dados do comprador -->
+    <div class="pix-step active" id="stepForm">
+      <div class="pix-logo">💳</div>
+      <h3>Quase lá! 🙏</h3>
+      <p style="font-size:14px;color:#666;margin:8px 0 18px;">Preencha seus dados para gerar o PIX</p>
+      <div style="display:flex;flex-direction:column;gap:10px;text-align:left;">
+        <input id="inputNome" type="text" placeholder="Seu nome completo *" style="padding:12px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:Nunito,sans-serif;width:100%;">
+        <input id="inputEmail" type="email" placeholder="Seu e-mail *" style="padding:12px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:Nunito,sans-serif;width:100%;">
+        <input id="inputTelefone" type="tel" placeholder="Telefone com DDD (opcional)" style="padding:12px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:Nunito,sans-serif;width:100%;">
+      </div>
+      <p id="formErro" style="color:#e53935;font-size:13px;margin-top:8px;display:none;"></p>
+      <button class="btn-copy" style="margin-top:14px;" onclick="submeterForm()">
+        Gerar PIX — R$ 15,00 ✅
+      </button>
+    </div>
+
+    <!-- ETAPA 1: Carregando QR -->
+    <div class="pix-step" id="stepCarregando">
+      <div class="checking-spinner"></div>
+      <h3>Gerando seu PIX...</h3>
+      <p style="color:#888;font-size:14px;margin-top:8px;">Aguarde um momento</p>
+    </div>
+
+    <!-- ETAPA 2: QR Code -->
+    <div class="pix-step" id="stepQR">
+      <div class="pix-logo">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.3 36.7c1.8 1.8 4.1 2.7 6.4 2.7s4.6-.9 6.4-2.7l5.4-5.4-5.1-5.1-5.4 5.4c-.7.7-1.6 1-2.6 1s-1.9-.4-2.6-1l-6.4-6.4c-1.4-1.4-1.4-3.7 0-5.1l5.4-5.4-5.1-5.1-5.4 5.4C.6 17.1 0 19.5 0 22s.6 4.9 2.7 6.4l8.6 8.3zm25.4-25.4c-1.8-1.8-4.1-2.7-6.4-2.7s-4.6.9-6.4 2.7l-5.4 5.4 5.1 5.1 5.4-5.4c.7-.7 1.6-1 2.6-1s1.9.4 2.6 1l6.4 6.4c1.4 1.4 1.4 3.7 0 5.1l-5.4 5.4 5.1 5.1 5.4-5.4C47.4 30.9 48 28.5 48 26s-.6-4.9-2.7-6.4l-9.6-8.3z"/>
+        </svg>
+      </div>
+      <h3>Pague com PIX</h3>
+      <div class="pix-valor">R$ 15,00</div>
+      <div class="qr-box">
+        <img id="qrCodeImg" src="" alt="QR Code PIX" style="width:180px;height:180px;">
+        <p style="font-size:12px;color:#888;">Escaneie com o app do seu banco</p>
+      </div>
+      <p style="font-size:13px;color:#555;margin-bottom:8px;">Ou copie o código PIX:</p>
+      <div class="pix-copy-key" id="pixCodeDisplay" onclick="copiarCodigo()">carregando...</div>
+      <button class="btn-copy" onclick="copiarCodigo()" id="btnCopy">📋 Copiar código PIX</button>
+      <p class="pix-timer">Expira em <b id="timerDisplay">10:00</b></p>
+      <button class="btn-copy" style="background:#2E7D32;margin-top:10px;" onclick="iniciarPolling()">
+        ✅ Já paguei!
+      </button>
+    </div>
+
+    <!-- ETAPA 3: Verificando -->
+    <div class="pix-step" id="stepChecking">
+      <div class="checking-spinner"></div>
+      <h3>Verificando pagamento...</h3>
+      <p style="color:#888;font-size:14px;margin-top:8px;">Consultando a BuckPay...</p>
+    </div>
+
+    <!-- ETAPA 4: Sucesso -->
+    <div class="pix-step" id="stepSucesso">
+      <div class="success-icon">🎉</div>
+      <h3 style="color:#2E7D32;">Pagamento confirmado!</h3>
+      <p style="font-size:15px;color:#444;margin:12px 0;">
+        Clique abaixo para receber seu pack no WhatsApp agora mesmo! 🙏
+      </p>
+      <a id="btnWhatsApp" class="btn-whats"
+         href="https://wa.me/5534998698482?text=Ol%C3%A1!%20Acabei%20de%20pagar%20o%20Pack%20de%20Livros%20para%20Colorir%20Religiosos.%20Pode%20me%20enviar%20o%20conte%C3%BAdo%3F%20%F0%9F%99%8F"
+         target="_blank">
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#25D366"/><path d="M34.6 13.4C32 10.8 28.6 9.3 25 9.3c-7.5 0-13.6 6.1-13.6 13.6 0 2.4.6 4.7 1.8 6.8L11 38l8.5-2.2c2 1.1 4.2 1.6 6.5 1.6 7.5 0 13.6-6.1 13.6-13.6 0-3.6-1.4-7-4-9.4z" fill="white"/></svg>
+        Receber no WhatsApp
+      </a>
+      <p style="font-size:12px;color:#aaa;margin-top:10px;">Você também receberá uma mensagem automática</p>
+    </div>
+
+    <!-- ETAPA 5: Erro -->
+    <div class="pix-step" id="stepErro">
+      <div style="font-size:48px;margin:10px 0;">❌</div>
+      <h3 style="color:#e53935;">Ops, algo deu errado</h3>
+      <p id="erroMsg" style="font-size:14px;color:#666;margin:10px 0;">Tente novamente.</p>
+      <button class="btn-copy" onclick="mostrarStep('stepForm')">Tentar novamente</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let pixExternalId = null;
+let pollingInterval = null;
+let timerInterval = null;
+
+const WPP_NUMERO = '5534998698482';
+
+function abrirPix() {
+  document.getElementById('pixOverlay').classList.add('active');
+  mostrarStep('stepForm');
+}
+
+function fecharPix() {
+  document.getElementById('pixOverlay').classList.remove('active');
+  pararPolling();
+  pararTimer();
+  mostrarStep('stepForm');
+}
+
+function mostrarStep(id) {
+  document.querySelectorAll('.pix-step').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ── Etapa 0: Submeter formulário e criar transação ──────────────────
+async function submeterForm() {
+  const nome = document.getElementById('inputNome').value.trim();
+  const email = document.getElementById('inputEmail').value.trim();
+  const telefone = document.getElementById('inputTelefone').value.trim();
+  const erroEl = document.getElementById('formErro');
+
+  if (!nome || nome.length < 3) {
+    erroEl.textContent = 'Por favor, informe seu nome completo.';
+    erroEl.style.display = 'block'; return;
+  }
+  if (!email || !email.includes('@')) {
+    erroEl.textContent = 'Por favor, informe um e-mail válido.';
+    erroEl.style.display = 'block'; return;
+  }
+  erroEl.style.display = 'none';
+  mostrarStep('stepCarregando');
+
+  try {
+    const res = await fetch('/api/criar-pix', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, email, telefone }),
+    });
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(data.error || 'Erro ao gerar PIX.');
+
+    pixExternalId = data.external_id;
+
+    // QR Code base64 vindo direto da BuckPay
+    document.getElementById('qrCodeImg').src = `data:image/png;base64,${data.qrcode_base64}`;
+    document.getElementById('pixCodeDisplay').textContent = data.pix_code;
+
+    // Atualiza link WhatsApp com nome do comprador
+    const msg = `Olá! Sou ${nome} e acabei de pagar o Pack de Livros Religiosos. Pode me enviar o conteúdo? 🙏`;
+    document.getElementById('btnWhatsApp').href = `https://wa.me/${WPP_NUMERO}?text=${encodeURIComponent(msg)}`;
+
+    mostrarStep('stepQR');
+    iniciarTimer(600); // 10 minutos
+
+  } catch (err) {
+    document.getElementById('erroMsg').textContent = err.message;
+    mostrarStep('stepErro');
+  }
+}
+
+// ── Copiar código PIX ───────────────────────────────────────────────
+function copiarCodigo() {
+  const code = document.getElementById('pixCodeDisplay').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = document.getElementById('btnCopy');
+    btn.textContent = '✅ Copiado!';
+    setTimeout(() => { btn.textContent = '📋 Copiar código PIX'; }, 2500);
+  });
+}
+
+// ── Polling: verificar pagamento a cada 5s ──────────────────────────
+function iniciarPolling() {
+  if (!pixExternalId) return;
+  mostrarStep('stepChecking');
+  verificarStatus(); // imediato
+  pollingInterval = setInterval(verificarStatus, 5000);
+}
+
+async function verificarStatus() {
+  try {
+    const res = await fetch(`/api/status-pix?external_id=${pixExternalId}`);
+    const data = await res.json();
+    if (data.status === 'paid') {
+      pararPolling();
+      pararTimer();
+      mostrarStep('stepSucesso');
+    }
+  } catch (e) {
+    // silencioso — continua tentando
+  }
+}
+
+function pararPolling() {
+  if (pollingInterval) { clearInterval(pollingInterval); pollingInterval = null; }
+}
+
+// ── Timer de expiração ──────────────────────────────────────────────
+function iniciarTimer(segundos) {
+  pararTimer();
+  let restante = segundos;
+  atualizarDisplay(restante);
+  timerInterval = setInterval(() => {
+    restante--;
+    atualizarDisplay(restante);
+    if (restante <= 0) {
+      pararTimer();
+      pararPolling();
+      document.getElementById('timerDisplay').textContent = 'Expirado';
+    }
+  }, 1000);
+}
+
+function atualizarDisplay(s) {
+  const m = String(Math.floor(s / 60)).padStart(2, '0');
+  const ss = String(s % 60).padStart(2, '0');
+  const el = document.getElementById('timerDisplay');
+  if (el) el.textContent = `${m}:${ss}`;
+}
+
+function pararTimer() {
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+}
+
+// Fechar ao clicar fora
+document.getElementById('pixOverlay').addEventListener('click', function(e) {
+  if (e.target === this) fecharPix();
+});
+</script>
+
+</body>
+</html>
